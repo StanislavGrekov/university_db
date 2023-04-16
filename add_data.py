@@ -104,6 +104,9 @@ def add_data():
         values (2, 'Иванов Петр Сидорович', 'Россия, Московская облать, г. Клин', to_date('01.01.2001','DD.MM.YYYY'), 'Россия, Московская облать, г. Клин, ул. Мясникова, д. 3', '4444 666666, выдан ОВД г. Клин, 10.01.2015');
         insert into clients 
         values (3, 'Петров Сиодр Иванович', 'Россия, Московская облать, г. Балашиха', to_date('01.01.2001','DD.MM.YYYY'), 'Россия, Московская облать, г. Балашиха, ул. Пушкина, д. 7', '4444 666666, выдан ОВД г. Клин, 10.01.2016');
+        insert into clients 
+        values (4, 'Максимов Максим Максимович', 'Россия, Челябинская облать, г. Миасс', to_date('01.01.2001','DD.MM.YYYY'), 'Россия, Челябинская облать, г. Миасс,  ул. Семенова, д. 1', '4433 116666, выдан ОВД г. Долгодеревенское, 10.01.2016');
+        
         
         insert into products
         values (1, 1, 'Кредитный договор с Сидоровым И.П.', 1, to_date('01.06.2015','DD.MM.YYYY'), null);
@@ -111,7 +114,8 @@ def add_data():
         values (2, 2, 'Депозитный договор с Ивановым П.С.', 2, to_date('01.08.2017','DD.MM.YYYY'), null);
         insert into products 
         values (3, 3, 'Карточный договор с Петровым С.И.', 3, to_date('01.08.2017','DD.MM.YYYY'), null);
-        
+        insert into products
+        values (4, 1, 'Кредитный договор с Максимовым М.М.', 4, to_date('01.06.2022','DD.MM.YYYY'), null);
         
         insert into accounts 
         values (1, 'Кредитный счет для Сидоровым И.П.', -2000, 1, to_date('01.06.2015','DD.MM.YYYY'), null, 1, '45502810401020000022');
@@ -119,6 +123,9 @@ def add_data():
         values (2, 'Депозитный счет для Ивановым П.С.', 6000, 2, to_date('01.08.2017','DD.MM.YYYY'), null, 2, '42301810400000000001');
         insert into accounts 
         values (3, 'Карточный счет для Петровым С.И.', 8000, 3, to_date('01.08.2017','DD.MM.YYYY'), null, 3, '40817810700000000001');
+        insert into accounts 
+        values (4, 'Кредитный счет для Максимова М.М.', 0, 4, to_date('01.06.2022','DD.MM.YYYY'), null, 4, '408178107000000000025');
+        
         
         insert into records 
         values (1, 1, 5000, 1, to_date('01.06.2015','DD.MM.YYYY'));
@@ -127,11 +134,11 @@ def add_data():
         insert into records 
         values (3, 0, 2000, 1, to_date('01.08.2015','DD.MM.YYYY'));
         insert into records 
-        values (4, 0, 3000, 1, to_date('01.09.2015','DD.MM.YYYY'));
+        values (4, 0, 2000, 1, to_date('01.09.2015','DD.MM.YYYY'));
         insert into records
-        values (5, 1, 5000, 1, to_date('01.10.2015','DD.MM.YYYY'));
+        values (5, 1, 1000, 1, to_date('01.10.2015','DD.MM.YYYY'));
         insert into records 
-        values (6, 0, 3000, 1, to_date('01.10.2015','DD.MM.YYYY'));
+        values (6, 1, 1000, 1, to_date('01.10.2015','DD.MM.YYYY'));
         
         insert into records 
         values (7, 0, 10000, 2, to_date('01.08.2017','DD.MM.YYYY'));
@@ -158,15 +165,16 @@ def add_data():
         insert into records 
         values (17, 0, 3500, 3, to_date('20.03.2023','DD.MM.YYYY'));
         
-        insert into records 
-        values (18, 1, 2500, 1, to_date('20.03.2023','DD.MM.YYYY'));
-        insert into records 
-        values (19, 0, 3500, 1, to_date('20.03.2023','DD.MM.YYYY'));
         
         insert into records 
         values (20, 1, 2500, 2, to_date('20.03.2023','DD.MM.YYYY'));
         insert into records 
         values (21, 0, 3500, 2, to_date('20.03.2023','DD.MM.YYYY'));
+        
+        insert into records 
+        values (22, 1, 25000, 4, to_date('01.06.2022','DD.MM.YYYY'));
+        insert into records 
+        values (23, 0, 25000, 4, to_date('14.04.2023','DD.MM.YYYY'));
 
         ''')
     conn.commit()
