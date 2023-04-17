@@ -46,7 +46,8 @@ def create_table():
             open_date DATE,
             close_date DATE,
             product_ref INTEGER NOT NULL REFERENCES products(id),
-            acc_num VARCHAR(100) NOT NULL UNIQUE
+            acc_num VARCHAR(100) NOT NULL UNIQUE,
+            sum_dogovor NUMERIC(10,2)
             );
             
             CREATE TABLE IF NOT EXISTS records (
@@ -118,13 +119,13 @@ def add_data():
         values (4, 1, 'Кредитный договор с Максимовым М.М.', 4, to_date('01.06.2022','DD.MM.YYYY'), null);
         
         insert into accounts 
-        values (1, 'Кредитный счет для Сидоровым И.П.', -2000, 1, to_date('01.06.2015','DD.MM.YYYY'), null, 1, '45502810401020000022');
+        values (1, 'Кредитный счет для Сидоровым И.П.', -2000, 1, to_date('01.06.2015','DD.MM.YYYY'), null, 1, '45502810401020000022', null);
         insert into accounts 
-        values (2, 'Депозитный счет для Ивановым П.С.', 6000, 2, to_date('01.08.2017','DD.MM.YYYY'), null, 2, '42301810400000000001');
+        values (2, 'Депозитный счет для Ивановым П.С.', 6000, 2, to_date('01.08.2017','DD.MM.YYYY'), null, 2, '42301810400000000001', null );
         insert into accounts 
-        values (3, 'Карточный счет для Петровым С.И.', 8000, 3, to_date('01.08.2017','DD.MM.YYYY'), null, 3, '40817810700000000001');
+        values (3, 'Карточный счет для Петровым С.И.', 8000, 3, to_date('01.08.2017','DD.MM.YYYY'), null, 3, '40817810700000000001', null);
         insert into accounts 
-        values (4, 'Кредитный счет для Максимова М.М.', 0, 4, to_date('01.06.2022','DD.MM.YYYY'), null, 4, '408178107000000000025');
+        values (4, 'Кредитный счет для Максимова М.М.', 0, 4, to_date('01.06.2022','DD.MM.YYYY'), null, 4, '408178107000000000025', null);
         
         
         insert into records 
@@ -182,5 +183,5 @@ def add_data():
 
 if __name__ == '__main__':
     #drop() # Нужно закомментировать или раскомментировать необходимую функцию.
-    #create_table()
+    create_table()
     add_data()
