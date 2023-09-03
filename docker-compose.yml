@@ -1,0 +1,12 @@
+version: '3.3'
+
+services:
+
+  db:
+    image: postgres:13.0-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: masterkey
+      POSTGRES_DB: bank_db
+    ports:
+      - 5433:5432
